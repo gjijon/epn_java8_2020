@@ -31,7 +31,7 @@ public class ActividadBFunctionalInterface {
     }
 
     public static <T> List<T> filtrar(List<T> lista, Predicate<T> pre) {
-        List<T> resultados = new ArrayList<T>();
+        List<T> resultados = new ArrayList<>();
         for (T t : lista) {
             if (pre.test(t)) {
                 resultados.add(t);

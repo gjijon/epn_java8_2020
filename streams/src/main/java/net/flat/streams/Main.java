@@ -19,10 +19,14 @@ public class Main {
         ClimaDatos.imprimeEnunciado("Pregunta b) Aplicar Functional Interface (Predicate, Consumer)...");
         ActividadBFunctionalInterface.ejecutaEjemploFunctionalInterface(climas);
 
-        ClimaDatos.imprimeEnunciado("Pregunta c) Crear 3 operaciones de Filtro....");
+        ClimaDatos.imprimeEnunciado("Pregunta c) Crear 3 operaciones de Filtro...");
         ActividadCOperacionesConFiltro.ejecutaEjemploFiltros(climas);
         
-        ClimaDatos.imprimeEnunciado("Pregunta d) Crear 3 operaciones de Ordenamiento.....");
+        ClimaDatos.imprimeEnunciado("Pregunta d) Crear 3 operaciones de Ordenamiento...");
         ActividadDOrdenamiento.ejecutaEjemploOrdenamiento(climas);
+        
+        ClimaDatos.imprimeEnunciado("Pregunta e) Procesar alguna de las operaciones realizadas en los items anteriores en modo normal y paralelo y verificar los resultados.");
+        ActividadEMideTiempo.ejecutaEjemploMedicionTiempos(ClimaDatos.obtieneDatosMasivos());
+        
     }
 }

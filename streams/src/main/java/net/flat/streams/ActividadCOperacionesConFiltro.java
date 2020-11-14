@@ -15,23 +15,23 @@ public class ActividadCOperacionesConFiltro {
 
     public static void ejecutaEjemploFiltros(List<Clima> climas) {
 
-        ClimaDatos.imprimeEnunciado("Filtrar usando filter (1):");
+        ClimaDatos.imprimeEnunciado("(1) Filtrar usando filter: Radiación mayor que 10");
         List<Clima> climasFiltradosRadiacionAlta = climas
                 .stream()
                 .filter(clima -> clima.getRadiacion() > 10)
                 .collect(Collectors.toList());
         ClimaDatos.imprimeClimas(climasFiltradosRadiacionAlta);
 
-        ClimaDatos.imprimeEnunciado("Filtrar usando filter (2):");
+        ClimaDatos.imprimeEnunciado("(2) Filtrar usando filter: latitud > 2 y longitud > 1");
         BigDecimal latitudInicial = new BigDecimal("2");
         BigDecimal longitudInicial = new BigDecimal("1");
         List<Clima> climasFiltradosCuadranteCreciente = climas
                 .stream()
-                .filter(clima -> clima.getLongitud().compareTo(latitudInicial) > 0 && clima.getLongitud().compareTo(longitudInicial) > 0)
+                .filter(clima -> clima.getLatitud().compareTo(latitudInicial) > 0 && clima.getLongitud().compareTo(longitudInicial) > 0)
                 .collect(Collectors.toList());
         ClimaDatos.imprimeClimas(climasFiltradosCuadranteCreciente);
 
-        ClimaDatos.imprimeEnunciado("Filtrar usando filter (3):");
+        ClimaDatos.imprimeEnunciado("(3) Filtrar usando filter: Nombre sea Quito");
         Optional<Clima> climaFiltradosQuito = climas
                 .stream()
                 .filter(clima -> "QUITO".equals(clima.getNombreCiudad().toUpperCase()))
