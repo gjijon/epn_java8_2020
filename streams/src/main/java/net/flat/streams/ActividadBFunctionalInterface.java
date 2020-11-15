@@ -32,11 +32,9 @@ public class ActividadBFunctionalInterface {
 
     public static <T> List<T> filtrar(List<T> lista, Predicate<T> pre) {
         List<T> resultados = new ArrayList<>();
-        for (T t : lista) {
-            if (pre.test(t)) {
-                resultados.add(t);
-            }
-        }
+        lista.stream().filter(t -> (pre.test(t))).forEachOrdered(t -> {
+            resultados.add(t);
+        });
         return resultados;
     }
 
