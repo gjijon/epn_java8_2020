@@ -11,7 +11,7 @@ import net.flat.streams.dto.Clima;
  *
  * @author gjijon
  */
-public final class ClimaDatos {
+public final class UtilDatos {
     
     public static final String VAR_PRECIPITACIONES_SOLEADO  = "Soleado";
     public static final String VAR_PRECIPITACIONES_LLUVIA   = "Lluvia";
@@ -50,13 +50,13 @@ public final class ClimaDatos {
         );
     }
     
-    public static void imprimeClimas(List<Clima> climas) {
-        climas.forEach(System.out::println);
+    public static void imprimeDatos(List datos) {
+        datos.forEach(System.out::println);
     }
     
-    public static void imprimeClima(Optional<Clima> clima) {
-        if (clima.isPresent()) {
-            System.out.println(clima.get());
+    public static void imprimeDato(Optional dato) {
+        if (dato.isPresent()) {
+            System.out.println(dato.get());
         }
     }
     

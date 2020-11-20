@@ -1,27 +1,28 @@
-package net.flat.streams;
+package net.flat.streams.actividad1;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
-import net.flat.streams.datos.ClimaDatos;
+import net.flat.streams.datos.UtilDatos;
 import net.flat.streams.dto.Clima;
 
 /**
  *
  * @author gjijon
  */
-public class ActividadBFunctionalInterface {
+public class T1ActividadBFunctionalInterface {
 
     public static void ejecutaEjemploFunctionalInterface(List<Clima> climas) {
-        ClimaDatos.imprimeEnunciado("Filtrar usando Predicate y Streams:");
-        List<Clima> climasFiltradosGranizo = ActividadBFunctionalInterface.filtrar(
-                climas,
-                clima -> ClimaDatos.VAR_PRECIPITACIONES_GRANIZO.equals(clima.getPrecipitaciones()));
-        ClimaDatos.imprimeClimas(climasFiltradosGranizo);
+        UtilDatos.imprimeEnunciado("Filtrar usando Predicate y Streams:");
+        
+        List<Clima> climasFiltradosGranizo = T1ActividadBFunctionalInterface.filtrar(climas,
+                clima -> UtilDatos.VAR_PRECIPITACIONES_GRANIZO.equals(clima.getPrecipitaciones()));
+        UtilDatos.imprimeDatos(climasFiltradosGranizo);
 
-        ClimaDatos.imprimeEnunciado("Filtrar usando Consumer:");
-        ActividadBFunctionalInterface.consumir(
+        UtilDatos.imprimeEnunciado("Filtrar usando Consumer:");
+        
+        T1ActividadBFunctionalInterface.consumir(
                 climas, clima -> {
                     if (clima.getNombreCiudad().contains("u")) {
                         System.out.println(clima);
